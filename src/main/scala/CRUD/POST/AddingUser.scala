@@ -3,7 +3,8 @@ import Application.USERS
 import Connection.DataBaseConnection.connection
 import Validation.PasswordValidation
 import akka.http.scaladsl.model.StatusCodes
-
+import java.time.OffsetDateTime
+import java.time.ZoneOffset
 import java.sql.PreparedStatement
 
 
@@ -24,7 +25,7 @@ object AddingUser{
       preparedStmt.setInt(1, User.id)
       preparedStmt.setString(2, User.name)
       preparedStmt.setString(3, User.startTime)
-      preparedStmt.setLong(4, System.currentTimeMillis())
+      preparedStmt.setObject(4, OffsetDateTime.now(ZoneOffset.UTC))
       preparedStmt.setString(5, pass)
       preparedStmt.execute
       preparedStmt.close()
