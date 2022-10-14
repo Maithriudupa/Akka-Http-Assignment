@@ -11,7 +11,7 @@ Different APIs are
 
 4.http PATCH "localhost:8080/api/updateUser?id=59&startTime=Oct 13&name=Sham&password=Kety@12po" here except id all are optional params.
 
-5.http DELETE localhost:8080/api/user/${UserId} //Delete user data based on user id
+5.http DELETE localhost:8080/api/deleteUser/${UserId} //Delete user data based on user id
 
 
 DDL in Mysql DB for USERS table
