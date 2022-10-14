@@ -6,6 +6,8 @@ import PATCH.GetUnknownValue._
 import Connection.DataBaseConnection.connection
 import Validation.PasswordValidation
 import akka.http.scaladsl.model.StatusCodes
+import java.time.OffsetDateTime
+import java.time.ZoneOffset
 
 import java.sql.PreparedStatement
 
@@ -37,7 +39,7 @@ object UpdateUser {
 
       preparedStmt.setString(1, name)
       preparedStmt.setString(2, startTime)
-      preparedStmt.setLong(3, System.currentTimeMillis())
+      preparedStmt.setObject(3, OffsetDateTime.now(ZoneOffset.UTC))
       preparedStmt.setString(4, pass)
       preparedStmt.setInt(5, UserId)
 
