@@ -34,7 +34,7 @@ object Route extends App  with UserJsonProtocol with SprayJsonSupport{
 
 
   implicit val timeout: Timeout = Timeout(10 seconds)
-val deleteRoute = DeleteRoute()
+
 
     val userServerRoute =
       pathPrefix("api" ) {
